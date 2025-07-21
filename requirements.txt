@@ -1,0 +1,42 @@
+# Core dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+ultralytics>=8.0.0
+opencv-python>=4.8.0
+Pillow>=9.0.0
+numpy>=1.21.0
+pandas>=1.5.0
+matplotlib>=3.6.0
+seaborn>=0.12.0
+scikit-learn>=1.2.0
+
+# Web interface
+streamlit>=1.28.0
+plotly>=5.15.0
+streamlit-option-menu>=0.3.6
+
+# Data processing
+pydicom>=2.3.0
+nibabel>=5.1.0
+albumentations>=1.3.0
+
+# Utilities
+pyyaml>=6.0
+tqdm>=4.64.0
+rich>=13.0.0
+loguru>=0.7.0
+
+# Development
+pytest>=7.2.0
+black>=22.0.0
+flake8>=6.0.0
+mypy>=1.0.0
+
+# Optional: For advanced features
+grad-cam>=1.4.0  # For heatmaps
+roboflow>=1.0.0  # For dataset management
+
+# Jupyter notebooks
+jupyter>=1.0.0
+ipykernel>=6.0.0
+ipywidgets>=8.0.0

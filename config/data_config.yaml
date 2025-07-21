@@ -1,0 +1,88 @@
+# Configuration du dataset
+dataset:
+  # Nom du dataset
+  name: "pediatric_fractures"
+  
+  # Chemins des données
+  paths:
+    raw: "data/raw"
+    processed: "data/processed"
+    annotations: "data/annotations"
+    train: "data/processed/train"
+    val: "data/processed/val"
+    test: "data/processed/test"
+    
+    custom:
+      description: "Custom pediatric fracture annotations"
+      format: "YOLO"
+
+# Prétraitement des images
+preprocessing:
+  # Format de sortie
+  output_format: "jpg"
+  
+  # Résolution cible
+  target_size: [640, 640]
+  
+  # Normalisation
+  normalization:
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+  
+  # Conversion DICOM vers JPG
+  dicom_conversion:
+    window_center: 40
+    window_width: 350
+    rescale_intercept: 0
+    rescale_slope: 1
+
+# Répartition des données
+data_split:
+  train: 0.7
+  val: 0.2
+  test: 0.1
+  
+  # Stratification par âge et sexe
+  stratify: true
+  stratify_columns:
+    - "age_group"
+    - "gender"
+
+# Métadonnées
+metadata:
+  age_groups:
+    - "0-2 years"
+    - "2-5 years"
+    - "5-10 years"
+    - "10-15 years"
+    - "15-18 years"
+  
+  anatomical_regions:
+    - "wrist"
+    - "forearm"
+    - "hand"
+    - "elbow"
+  
+  fracture_types:
+    - "complete"
+    - "incomplete"
+    - "greenstick"
+    - "buckle"
+    - "plastic_deformation"
+
+# Validation des données
+validation:
+  # Vérifications à effectuer
+  checks:
+    - "image_format"
+    - "annotation_format"
+    - "class_consistency"
+    - "bounding_box_validity"
+    - "image_annotation_pairing"
+  
+  # Seuils de qualité
+  quality_thresholds:
+    min_image_size: [256, 256]
+    max_image_size: [4096, 4096]
+    min_bbox_area: 100
+    max_bbox_overlap: 0.9

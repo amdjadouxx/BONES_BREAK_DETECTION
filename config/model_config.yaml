@@ -1,0 +1,66 @@
+# Configuration du modèle YOLOv8
+model:
+  # Modèle de base (yolov8n, yolov8s, yolov8m, yolov8l, yolov8x)
+  name: "yolov8n"
+  
+  # Taille d'entrée des images
+  input_size: 640
+  
+  # Nombre de classes
+  num_classes: 1  # fracture
+  
+  # Noms des classes
+  class_names:
+    0: "fracture"
+  
+  # Seuils de confiance
+  confidence_threshold: 0.25
+  iou_threshold: 0.45
+  
+  # Couleurs pour les visualisations (BGR)
+  class_colors:
+    0: [0, 0, 255]  # Rouge pour fracture
+
+# Configuration d'entraînement
+training:
+  epochs: 100
+  batch_size: 16
+  learning_rate: 0.001
+  
+  # Optimiseur
+  optimizer: "AdamW"
+  
+  # Scheduler
+  scheduler: "CosineAnnealingLR"
+  
+  # Augmentation des données
+  augmentation:
+    enabled: true
+    horizontal_flip: 0.5
+    vertical_flip: 0.1
+    rotation: 15
+    brightness: 0.2
+    contrast: 0.2
+    
+  # Early stopping
+  early_stopping:
+    patience: 20
+    min_delta: 0.001
+
+# Configuration de validation
+validation:
+  split_ratio: 0.2
+  metrics:
+    - "precision"
+    - "recall"
+    - "f1_score"
+    - "map50"
+    - "map50-95"
+
+# Configuration de l'inférence
+inference:
+  device: "auto"  # auto, cpu, cuda, mps
+  half_precision: false
+  save_conf: true
+  save_txt: true
+  save_crop: false
