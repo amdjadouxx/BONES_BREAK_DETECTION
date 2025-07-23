@@ -37,8 +37,8 @@ Ce projet propose une **pipeline complète d'inférence** pour détecter automat
 ### Installation
 ```bash
 # Cloner le repository
-git clone https://github.com/amdjadouxx/pediatric-fracture-detection.git
-cd pediatric-fracture-detection
+git clone https://github.com/amdjadouxx/BONES_BREAK_DETECTION.git
+cd BONES_BREAK_DETECTION
 
 # Installer les dépendances
 pip install -r requirements.txt
@@ -53,7 +53,7 @@ streamlit run webapp/app.py
 ## 📁 Structure du projet
 
 ```
-📦 pediatric-fracture-detection/
+📦 BONES_BREAK_DETECTION/
 ├── 📁 data/                    # Gestion du dataset
 │   ├── raw/                    # Données brutes
 │   ├── processed/              # Données prétraitées
