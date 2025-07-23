@@ -165,10 +165,6 @@ Interface Streamlit intuitive permettant :
 python scripts/evaluate_model.py --model models/best.pt --data data/test/
 ```
 
-## 🤝 Contribution
-
-Les contributions sont les bienvenues ! Consultez [CONTRIBUTING.md](CONTRIBUTING.md) pour plus de détails.
-
 ### Développement local :
 ```bash
 # Créer un environnement virtuel
